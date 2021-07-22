@@ -4,6 +4,7 @@ MongoDB wrapper for beginners using Mongoose and simple syntax made with JavaScr
 ---
 
 A simple promise-based wrapper made for beginners with focus in Performance and Simplicity.
+
 Inspired in [quick.db](https://www.npmjs.com/package/quick.db), [Enmap](https://www.npmjs.com/package/enmap) and [denky-database](https://www.npmjs.com/package/denky-database)
 
 ---
@@ -48,3 +49,103 @@ db.connect();
 ---
 
 ## Documentation
+- `Database#connection` **|** Mongoose connection object
+- `Database#db` **|** Mongoose connection object
+- `Database#model` **|** Mongoose model object
+- `Database#mongoose` **|** Mongoose model object
+- `Database#schema` **|** Mongoose schema object
+
+- `Database#set(key, value)` **|** Create or changes a key with the specified value
+  ```js
+  Database.set('website', 'www.github.com/DenkyLabs');
+  ```
+  - Types:
+    - Key name: any (\*)
+    - Value: any (\*)
+
+- `Database#get(key)` **|** Returns the value of the specified key
+  ```js
+  Database.get('website');
+  ```
+  - Types:
+    - Key name: any (\*)
+    - Returns: undefined or any (\*)
+
+- `Database#delete(key)` **|** Delete a key from the database
+  ```js
+  Database.delete('website');
+  ```
+  - Types:
+    - Key name: any (\*)
+    - Returns: Object or null
+
+- `Database#exists(key)` **|** Check if a key exists
+  ```js
+  Database.exists('website');
+  ```
+  - Types:
+    - Key name: any (\*)
+    - Returns: boolean
+
+- `Database#inc(key)` **|** Increment a number to the key (addition)
+  ```js
+  await Database.set('number', 15);
+  Database.inc('number', 30) // Sets the value to 45
+  ```
+  - Types:
+    - Key name: any (\*)
+    - Returns: Object or number
+
+- `Database#dec(key)` **|** Decrease a number to the key (addition)
+  ```js
+  await Database.set('number', 15);
+  Database.dec('number', 10) // Sets the value to 5
+  ```
+  - Types:
+    - Key name: any (\*)
+    - Returns: Object or number
+
+- `Database#deleteAll()` **|** Deletes everything from the database
+```js
+Database.deleteAll()
+```
+  - Types:
+    - Returns: Array<Deleted object names or empty>
+	
+- `Database#keyArray()` **|** Get all keys from the database
+```js
+Database.keyArray();
+```
+  - Types:
+    - Returns: Array<any>
+ 
+- `Database#getAll()` **|** Get all objects from the database
+```js
+Database.getAll();
+```
+  - Types:
+    - Returns: Array<any>
+	
+- `Database#pull(key, value)` **|** Remove an item from an array
+```js
+await Database.set('companies', ['Google', 'Facebook'])
+Database.pull('companies', 'Google'); // ['Facebook']
+```
+  - Types:
+    - Returns: Object
+	
+- `Database#push(key, value)` **|** Add an item from an array
+```js
+await Database.set('companies', ['Facebook'])
+Database.pull('companies', 'Google'); // ['Facebook', 'Google']
+```
+  - Types:
+    - Returns: Object
+	
+- `Database#push(key, value)` **|** Add an item from an array
+```js
+await Database.set('companies', ['Amazon'])
+Database.includes('companies', 'Amazon'); // true
+```
+  - Types:
+    - Returns: boolean
