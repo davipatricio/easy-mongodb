@@ -1,0 +1,16 @@
+{
+  "name": "easy-mongodb",
+  "version": "1.0.0",
+  "description": "MongoDB wrapper for begginers using Mongoose and simple syntax made with JavaScript.",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": ["javascript", "mongo", "mongodb", "mongoose", "easy-mongodb", "quickmongo", "easy", "mongo-wrapper", "node"],
+  "author": "Veric",
+  "license": "MIT",
+  "dependencies": {
+    "mongoose": "^5.13.3"
+  },
+  "devDependencies": {
+    "eslint": "^7.31.0"
+  }
+}
