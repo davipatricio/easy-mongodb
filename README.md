@@ -10,9 +10,9 @@ Inspired in [quick.db](https://www.npmjs.com/package/quick.db), [Enmap](https://
 ---
 
 ## Installation
-`npm install easy-mongodb --production`
+`npm install easy-mongodb.js --production`
 
-`yarn add easy-mongodb`
+`yarn add easy-mongodb.js`
 
 ## Support
 Create a issue or join my Discord server [click here](https://discord.gg/bVWdscg) (support only in english and portuguese)
@@ -21,7 +21,7 @@ Create a issue or join my Discord server [click here](https://discord.gg/bVWdscg
 
 ## Example
 ```js
-const DatabaseManager = require('./index');
+const DatabaseManager = require('easy-mongodb.js');
 const db = new DatabaseManager('mongodb url here', 'name');
 
 db.on('ready', async () => {
