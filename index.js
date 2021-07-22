@@ -36,14 +36,14 @@ module.exports = class DatabaseMongooseConnection extends EventEmmiter {
 
 	// Set database value
 	async set (key, value) {
-		// Buscamos o objeto da chave
+		// We search for the key object
 		const obj = await this.model.findOne({ name: key });
-		// Verificamos se a chave já existe, se existe, apenas alteramos o valor
+		// We check if the key already exists, if it exists, we just change the value
 		if (obj) {
 			obj.value = value;
 			return obj.save();
 		}
-		// Se não existe, criamos um novo objeto
+		// If it doesn't exist, we create a new object
 		else {
 			const newObj = new this.model({ name: key, value: value });
 			return newObj.save();
