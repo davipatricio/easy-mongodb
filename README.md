@@ -55,6 +55,11 @@ db.connect();
 - `Database#mongoose` **|** Mongoose model object
 - `Database#schema` **|** Mongoose schema object
 
+
+
+- `Database#connect()` **|** Connects to the MongoDB database
+- `Database#disconnect()` **|** Disconnects from the MongoDB database (and don't reconnect automatically)
+
 - `Database#set(key, value)` **|** Create or changes a key with the specified value
   ```js
   Database.set('website', 'www.github.com/DenkyLabs');
