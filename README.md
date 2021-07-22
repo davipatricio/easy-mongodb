@@ -27,20 +27,20 @@ const db = new DatabaseManager('mongodb url here', 'name');
 db.on('ready', async () => {
 	console.log('Database connected successfully.');
   
-  // Create key 'companies' with an array as value.
+	// Create key 'companies' with an array as value.
 	await db.set('companies', ['Facebook', 'Apple', 'Amazon', 'Netflix', 'Google'];
   
-  // Get the companies list from database
+	// Get the companies list from database
 	const companiesList = await db.get('companies');
 	console.log(companiesList); // Should return an array.
 });
 
 db.on('error', (mongooseError) => {
-  console.log('Unexpected error:', mongooseError);
+	console.log('Unexpected error:', mongooseError);
 });
 
 db.on('disconnect', (mongooseError) => {
-  console.log('Disconnected from the database. Trying to reconnect automatically...');
+	console.log('Disconnected from the database. Trying to reconnect automatically...');
 });
 
 db.connect();
