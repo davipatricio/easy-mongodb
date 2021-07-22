@@ -11,6 +11,8 @@ Inspired in [quick.db](https://www.npmjs.com/package/quick.db), [Enmap](https://
 ## Installation
 `npm install easy-mongodb --production`
 
+`yarn add easy-mongodb`
+
 ## Support
 Create a issue or join my Discord server [click here](https://discord.gg/bVWdscg) (support only in english and portuguese)
 
@@ -42,3 +44,7 @@ db.on('disconnect', (mongooseError) => {
 
 db.connect();
 ```
+
+---
+
+## Documentation
